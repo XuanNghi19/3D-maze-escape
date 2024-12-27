@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraRig : MonoBehaviour
 {
-    public PlayerMovement player;
+    public Player player;
     public Transform twistPivot; // Đặt TwistPivot
     public Transform pitchPivot; // Đặt PitchPivot
 
@@ -21,23 +21,25 @@ public class CameraRig : MonoBehaviour
     {
         //Locking the cursor to the middle of the screen and making it invisible
         Cursor.lockState = CursorLockMode.Locked;
-        player = GameObject.Find("FemaleCharacterPBR").GetComponent<PlayerMovement>();
-        // Lưu lại góc xoay ban đầu của twistPivot
-        defaultRotation = twistPivot.rotation;
+        player = GameObject.Find("FemaleCharacterPBR").GetComponent<Player>();
+        pitchPivot.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Nhận input từ chuột
-        float twistInput = Input.GetAxis("Mouse X") * twistSpeed * Time.deltaTime;
-        float pitchInput = -Input.GetAxis("Mouse Y") * pitchSpeed * Time.deltaTime;
+        if (!player.isDead)
+        {
+            // Nhận input từ chuột
+            float twistInput = Input.GetAxis("Mouse X") * twistSpeed * Time.deltaTime;
+            float pitchInput = -Input.GetAxis("Mouse Y") * pitchSpeed * Time.deltaTime;
 
-        // xoay ngang nhân vật
-        player.transform.Rotate(0f, twistInput, 0f);
+            // xoay ngang nhân vật
+            player.transform.Rotate(0f, twistInput, 0f);
 
-        // Tính toán và giới hạn pitch
-        currentPitch = Mathf.Clamp(currentPitch + pitchInput, minPitch, maxPitch);
-        pitchPivot.localRotation = Quaternion.Euler(currentPitch, 0f, 0f);
+            // Tính toán và giới hạn pitch
+            currentPitch = Mathf.Clamp(currentPitch + pitchInput, minPitch, maxPitch);
+            pitchPivot.localRotation = Quaternion.Euler(currentPitch, 0f, 0f);
+        }
     }
 }

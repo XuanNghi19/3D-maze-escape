@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12f;
@@ -20,9 +20,34 @@ public class PlayerMovement : MonoBehaviour
     bool isWall;
     Animator animator;
 
+    // basic index
+    public int maxHp = 4;
+    public int hp = 4;
+    public int atk = 1;
+    public int def = 0;
+
+    // attack animation
+    public bool isAttack = false;
+    int attackIndex = 0;
+    public float attackCooldown = 16/30f;
+    float lastAttackTime = 0f;
+
+    // sword collider
+    public BoxCollider swordCollider;
+
+    //Audio
+    public AudioSource audioSrc;
+    public AudioClip swordSnap, attackedSrc;
+
+    //Attacked
+    private bool canTakeDamage = true;
+    private float damageCooldown = 1f;
+    public bool isDead = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        swordCollider = GetComponentInChildren<BoxCollider>();
     }
 
     void Update()
@@ -36,11 +61,26 @@ public class PlayerMovement : MonoBehaviour
         }
         //>
 
+        //< animation attack
+        if (Input.GetMouseButtonDown(0) && !isAttack && Time.time > lastAttackTime + attackCooldown && !isDead)
+        {
+            isAttack = true;
+            lastAttackTime = Time.time;
+            attackIndex = (attackIndex + 1) % 4;
+            animator.SetTrigger("attack" + attackIndex);
+
+            audioSrc.PlayOneShot(swordSnap);
+        }
+        //>
+
         //< animation movement
         float x = 0;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) x = Input.GetAxis("Horizontal");
         float z = 0;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) z = Input.GetAxis("Vertical");
+        if (!isAttack && !isDead)
+        {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) x = Input.GetAxis("Horizontal");
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) z = Input.GetAxis("Vertical");
+        }
 
         if (x != 0 || z != 0)
         {
@@ -70,8 +110,63 @@ public class PlayerMovement : MonoBehaviour
         }
         //>
 
+        //< gravity
         velocity.y += gravity * Time.deltaTime;
+        //>
+
+        //< move player
         controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
+        //>
+        
+        //< Reset attack state after cooldown
+        if (isAttack && Time.time > lastAttackTime + attackCooldown)
+        {
+            isAttack = false;
+        }
+        //>
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Monster") && canTakeDamage && !isDead)   
+        {
+            canTakeDamage = false;
+            audioSrc.PlayOneShot(attackedSrc);
+            StartCoroutine(DamageCooldown(
+                GetDamage(other)
+            ));
+            Debug.Log("Collision with monster detected by playerCollider!");
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Monster") && canTakeDamage && !isDead)
+        {
+            canTakeDamage = false;
+            audioSrc.PlayOneShot(attackedSrc);
+            StartCoroutine(DamageCooldown(GetDamage(other)));
+            Debug.Log("Collision with monster detected by playerCollider!");
+        }
+    }
+
+    private IEnumerator DamageCooldown(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Debug.Log("Player is dead!");
+            animator.SetTrigger("isDead");
+            isDead = true;
+        }
+        yield return new WaitForSeconds(damageCooldown);
+        canTakeDamage = true;
+    }
+
+    private int GetDamage(Collider other)
+    {
+        int monsterAtk = other.GetComponent<Monster>().atk;
+        return monsterAtk - def;
     }
 }
