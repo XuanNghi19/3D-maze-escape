@@ -37,12 +37,19 @@ public class Player : MonoBehaviour
 
     //Audio
     public AudioSource audioSrc;
-    public AudioClip swordSnap, attackedSrc;
+    public AudioClip swordSnap, attackedSnd, jumpSnd, healSnd, coinSnd, hadKeySnd;
 
     //Attacked
     private bool canTakeDamage = true;
-    private float damageCooldown = 1f;
+    private float damageCooldown = 1.5f;
     public bool isDead = false;
+
+    //Item
+    public int coin = 0;
+    public bool hadKey = false;
+
+    // Game win
+    public bool isWin = false;
 
     void Start()
     {
@@ -104,9 +111,10 @@ public class Player : MonoBehaviour
         {
             move = Vector3.zero;
         }
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isDead)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            audioSrc.PlayOneShot(jumpSnd);
         }
         //>
 
@@ -132,11 +140,35 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Monster") && canTakeDamage && !isDead)   
         {
             canTakeDamage = false;
-            audioSrc.PlayOneShot(attackedSrc);
+            audioSrc.PlayOneShot(attackedSnd);
             StartCoroutine(DamageCooldown(
                 GetDamage(other)
             ));
             Debug.Log("Collision with monster detected by playerCollider!");
+        }
+
+        if (other.CompareTag("Coin"))
+        {
+            coin++;
+            audioSrc.PlayOneShot(coinSnd);
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Heart"))
+        {
+            if (hp < maxHp)
+            {
+                hp = maxHp;
+                Destroy(other.gameObject);
+                StartCoroutine(ActiveHealingEffect());
+            }
+        }
+
+        if (other.CompareTag("Key"))
+        {
+            hadKey = true;
+            audioSrc.PlayOneShot(hadKeySnd);
+            Destroy(other.gameObject);
         }
     }
 
@@ -145,7 +177,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Monster") && canTakeDamage && !isDead)
         {
             canTakeDamage = false;
-            audioSrc.PlayOneShot(attackedSrc);
+            audioSrc.PlayOneShot(attackedSnd);
             StartCoroutine(DamageCooldown(GetDamage(other)));
             Debug.Log("Collision with monster detected by playerCollider!");
         }
@@ -157,6 +189,7 @@ public class Player : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("Player is dead!");
+
             animator.SetTrigger("isDead");
             isDead = true;
         }
@@ -168,5 +201,21 @@ public class Player : MonoBehaviour
     {
         int monsterAtk = other.GetComponent<Monster>().atk;
         return monsterAtk - def;
+    }
+
+    private IEnumerator ActiveHealingEffect() {
+        GameObject healingEffect = transform.Find("FX_Healing_AOE_AA").gameObject;
+        if (healingEffect != null)
+        {
+            healingEffect.SetActive(true);
+        }
+        audioSrc.PlayOneShot(healSnd);
+        yield return new WaitForSeconds(healSnd.length);
+        healingEffect.SetActive(false);
+    }
+
+    public void Victory()
+    {
+        animator.SetTrigger("isVictory");
     }
 }

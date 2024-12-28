@@ -10,6 +10,7 @@ public class MonsterNavigation : MonoBehaviour
     public Player player;
     private NavMeshAgent agent;
     public Vector3 startPos;
+    public float distantRanege = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,9 @@ public class MonsterNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.isDead)
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+        if (player.isDead || distanceToPlayer > distantRanege)
         {
             agent.destination = startPos;
         } else {
