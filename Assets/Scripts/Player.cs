@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     bool isGrounded;
     bool isWall;
     Animator animator;
+    public bool actionCancel = false;
 
     // basic index
     public int maxHp = 4;
@@ -51,8 +52,32 @@ public class Player : MonoBehaviour
     // Game win
     public bool isWin = false;
 
+    public int currentLevel;
+    public void SavePlayerData()
+    {
+        PlayerPrefs.SetInt("MaxHP", maxHp);
+        PlayerPrefs.SetInt("HP", hp);
+        PlayerPrefs.SetInt("Coin", coin);
+        PlayerPrefs.SetInt("Def", def);
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPlayerData()
+    {
+        if (PlayerPrefs.HasKey("MaxHP"))
+        {
+            maxHp = PlayerPrefs.GetInt("MaxHP");
+            hp = PlayerPrefs.GetInt("HP");
+            coin = PlayerPrefs.GetInt("Coin");
+            def = PlayerPrefs.GetInt("Def");
+            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+        }
+    }
+
     void Start()
     {
+        LoadPlayerData();
         animator = GetComponent<Animator>();
         swordCollider = GetComponentInChildren<BoxCollider>();
     }
@@ -69,7 +94,7 @@ public class Player : MonoBehaviour
         //>
 
         //< animation attack
-        if (Input.GetMouseButtonDown(0) && !isAttack && Time.time > lastAttackTime + attackCooldown && !isDead)
+        if (Input.GetMouseButtonDown(0) && !isAttack && Time.time > lastAttackTime + attackCooldown && !isDead && !actionCancel)
         {
             isAttack = true;
             lastAttackTime = Time.time;
@@ -83,7 +108,7 @@ public class Player : MonoBehaviour
         //< animation movement
         float x = 0;
         float z = 0;
-        if (!isAttack && !isDead)
+        if (!isAttack && !isDead && !actionCancel)
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) x = Input.GetAxis("Horizontal");
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) z = Input.GetAxis("Vertical");

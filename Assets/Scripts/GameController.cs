@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private AudioSource audioSrc;
+    public AudioSource MusicSrc;
+    public AudioSource SFXSrc;
     public AudioClip bgm, victory, gameOver;
     public Player player;
     private bool isVictory = false;
@@ -13,7 +14,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        audioSrc = GetComponent<AudioSource>();
 
         // Play background music and set it to loop
         PlayBackgroundMusic();
@@ -21,42 +21,86 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if(player.isDead && !isGameOver)
+        if (player.isDead && !isGameOver)
         {
-            PlayGameOverSound();
+            PlayGameOver();
         }
 
-        if(player.isWin && !isVictory)
+        if (player.isWin && !isVictory)
         {
-            StartCoroutine(PlayVictorySound());
+            StartCoroutine(PlayVictory());
         }
     }
 
     void PlayBackgroundMusic()
     {
-        audioSrc.clip = bgm;
-        audioSrc.loop = true; // Set the audio to loop
-        audioSrc.Play();
+        MusicSrc.clip = bgm;
+        MusicSrc.loop = true; // Set the audio to loop
+        MusicSrc.Play();
     }
 
-    public IEnumerator PlayVictorySound()
+    public IEnumerator PlayVictory()
     {
         // Set the victory flag to true and play the victory sound
         isVictory = true;
-        audioSrc.Stop(); // Stop the background music
-        audioSrc.loop = false; // Ensure the victory sound does not loop
+        MusicSrc.Stop(); // Stop the background music
+        MusicSrc.loop = false; // Ensure the victory sound does not loop
         player.Victory(); // Call the victory animation
-        audioSrc.PlayOneShot(victory);
+        SFXSrc.PlayOneShot(victory);
         portalEffect.SetActive(true); // Activate the portal effect
-        yield return new WaitForSeconds(5/3f);
+        yield return new WaitForSeconds(5f);
+
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // Get the total number of scenes in build settings
+        int totalScenes = SceneManager.sceneCountInBuildSettings;
+        Debug.Log("Current scene index: " + currentSceneIndex);
+
+        if (currentSceneIndex < 2)
+        {
+            // Save player data before loading the next scene
+            ChangeScene(currentSceneIndex + 1);
+        }
+        else
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+            Debug.Log("This is the last scene. Game Over!");
+        }
     }
 
-    public void PlayGameOverSound()
+    public void PlayGameOver()
     {
         // Set the game over flag to true and play the game over sound
         isGameOver = true;
-        audioSrc.Stop(); // Stop the background music
-        audioSrc.loop = false; // Ensure the game over sound does not loop
-        audioSrc.PlayOneShot(gameOver);
+        MusicSrc.Stop(); // Stop the background music
+        MusicSrc.loop = false; // Ensure the game over sound does not loop
+        SFXSrc.PlayOneShot(gameOver);
+
+        // Xóa tất cả dữ liệu PlayerPrefs
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
+    public void ChangeScene(int sceneIndex)
+    {
+        player.currentLevel = sceneIndex; // Cập nhật currentLevel trước khi lưu
+        player.SavePlayerData();
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        player.LoadPlayerData();
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

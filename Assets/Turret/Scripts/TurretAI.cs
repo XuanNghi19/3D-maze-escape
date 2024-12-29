@@ -38,7 +38,6 @@ public class TurretAI : MonoBehaviour
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         InvokeRepeating("ChackForTarget", 0, 0.5f);
 

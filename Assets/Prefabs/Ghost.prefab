@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1057238035560142472, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
       propertyPath: m_Name
-      value: Ghost Variant
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 2609134474458004917, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
       propertyPath: anim
@@ -76,11 +76,16 @@ PrefabInstance:
       propertyPath: hp
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4266662431097650155, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4888364775248662215, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3109558778384493467, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 7814913382944166826}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
