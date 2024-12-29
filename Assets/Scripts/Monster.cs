@@ -32,6 +32,16 @@ public class Monster : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other == player.swordCollider && canTakeDamage && player.isAttack)
+        {
+            canTakeDamage = false;
+            audioSrc.PlayOneShot(swordHit);
+            StartCoroutine(DamageCooldown());
+        }
+    }
+
     // Coroutine to handle the cooldown of the monster taking damage
     private IEnumerator DamageCooldown()
     {
@@ -41,10 +51,25 @@ public class Monster : MonoBehaviour
         hp -= player.atk;
         if (hp <= 0)
         {
+            // Disable the monster
+            if(transform.Find("Ghost") != null)
+            {
+                GameObject monsterMesh = transform.Find("Ghost").gameObject;
+                monsterMesh.SetActive(false);
+            }
+            if(transform.Find("Tower") != null)
+            {
+                GameObject monsterMesh = transform.Find("Tower").gameObject;
+                monsterMesh.SetActive(false);
+            }
+            if(transform.Find("Boss") != null)
+            {
+                GameObject monsterMesh = transform.Find("Boss").gameObject;
+                monsterMesh.SetActive(false);
+            }
             audioSrc.PlayOneShot(dieSound);
             Debug.Log("Monster is dead!");
             monsterCollider.enabled = false;
-            GetComponent<MeshRenderer>().enabled = false;
             yield return new WaitForSeconds(dieSound.length);
             Destroy(gameObject);
         }

@@ -21,7 +21,7 @@ public class CameraRig : MonoBehaviour
     {
         //Locking the cursor to the middle of the screen and making it invisible
         Cursor.lockState = CursorLockMode.Locked;
-        player = GameObject.Find("FemaleCharacterPBR").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player>();
         pitchPivot.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
