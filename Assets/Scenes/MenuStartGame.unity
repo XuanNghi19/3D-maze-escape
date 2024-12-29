@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 1065483497}
   - component: {fileID: 1065483496}
   m_Layer: 5
-  m_Name: Setting
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C\xC0I \u0110\u1EB6T"
+  m_text: "H\u01AF\u1EDANG D\u1EAAN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
   m_sharedMaterial: {fileID: 2674715338406880090, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}

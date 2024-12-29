@@ -13,26 +13,26 @@ public class InGame : MonoBehaviour
     [SerializeField] private GameObject HUD;   // Canvas tạm dừng
 
     private bool isPaused = true;  
+    private bool isShopOpen = false;
 
     public void ShowPauseCanvas()
     {
         isPaused = true;
-        Pause.SetActive(true);   // Bật Canvas tạm dừng
-        Time.timeScale = 0f; // Dừng thời gian trong game
+        Pause.SetActive(true);  
+        Time.timeScale = 0f; 
     }
 
-    public void Home()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-   
-    // Update is called once per frame
+  
     public void HidePauseCanvas()
     {
         isPaused = false;
         Pause.SetActive(false);   // Tắt Canvas tạm dừng
         Time.timeScale = 1f; // Tiếp tục thời gian trong game
+    }
+
+      public void Home()
+    {
+        SceneManager.LoadScene(0);
     }
 
      public void ShowSetting()
@@ -44,28 +44,38 @@ public class InGame : MonoBehaviour
         Setting.SetActive(false);
     }
 
-    // public void Lose()
-    // {
-    //     Lose.SetActive(true);   
-    //     Time.timeScale = 0f; 
-    // }
-    // public void Win()
-    // {
-    //     Pause.SetActive(false);   
-    //     Time.timeScale = 0f; 
-    // }
 
-    
+     public void ShowShop()
+    {
+        isShopOpen = true;
+        Shop.SetActive(true);    
+    }
+
+    public void HideShop()
+    {
+        isShopOpen = false;
+        Shop.SetActive(false);  
+    }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Khi nhấn phím ESC
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (isPaused)
                 HidePauseCanvas();
             else
                 ShowPauseCanvas();
+        }
+
+        // Khi nhấn phím P
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (isShopOpen)
+                HideShop();
+            else
+                ShowShop();
         }
     }
 }
