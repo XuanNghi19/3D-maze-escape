@@ -84,7 +84,7 @@ public class InGame : MonoBehaviour
             ShowLoseCanvas();
         }
 
-        if (player.isWin && SceneManager.GetActiveScene().buildIndex == 2)
+        if (player.isWin && SceneManager.GetActiveScene().buildIndex == 4)
         {
             ShowWinCanvas();
         }
@@ -174,12 +174,12 @@ public class InGame : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void Quits()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
     }
 
     private void UpdateCoinText()

@@ -391,6 +391,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -1279,6 +1287,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -4069,6 +4085,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -4785,6 +4809,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -5921,6 +5953,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -6715,6 +6755,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -11283,6 +11331,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -17212,6 +17268,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -20233,6 +20297,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -34879,6 +34951,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -40438,6 +40518,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -41798,6 +41886,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -42052,6 +42148,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -42854,7 +42958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4266662431097650155, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
       propertyPath: atk
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4266662431097650155, guid: 77fd035e8db267b4eb9e610ba41b2300, type: 3}
       propertyPath: audioSrc
@@ -43433,6 +43537,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -50092,6 +50204,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -52994,6 +53114,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -56242,6 +56370,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -57295,6 +57431,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -58661,6 +58805,14 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
       value: 
       objectReference: {fileID: 1054650183}
@@ -58939,6 +59091,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc
@@ -59821,6 +59981,10 @@ PrefabInstance:
     - target: {fileID: 1427601187493349978, guid: 5453162fa4554fc42aa367152507c527, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373770441109134250, guid: 5453162fa4554fc42aa367152507c527, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2373770441109134250, guid: 5453162fa4554fc42aa367152507c527, type: 3}
       propertyPath: audioSrc
@@ -61459,6 +61623,14 @@ PrefabInstance:
     - target: {fileID: 6133356629442535102, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
+      propertyPath: atk
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954725366627431389, guid: 75b17330240c77a408b1c610bd09111c, type: 3}
       propertyPath: audioSrc

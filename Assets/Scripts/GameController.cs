@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour
         int totalScenes = SceneManager.sceneCountInBuildSettings;
         Debug.Log("Current scene index: " + currentSceneIndex);
 
-        if (currentSceneIndex < 2)
+        if (currentSceneIndex < totalScenes - 1)
         {
             // Save player data before loading the next scene
             ChangeScene(currentSceneIndex + 1);

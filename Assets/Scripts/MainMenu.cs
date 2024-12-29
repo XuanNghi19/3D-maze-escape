@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
   }
   public void Play()
   {
-    SceneManager.LoadScene(0);
+    SceneManager.LoadScene(2);
     PlayerPrefs.DeleteAll();
     PlayerPrefs.Save();
   } 
@@ -34,12 +34,12 @@ public class MainMenu : MonoBehaviour
 
   public void Tutorial()
   {
-    SceneManager.LoadScene(4);
+    SceneManager.LoadScene(1);
   } 
 
   public void Menu()
   {
-    SceneManager.LoadScene(3);
+    SceneManager.LoadScene(0);
   }
 }
 
