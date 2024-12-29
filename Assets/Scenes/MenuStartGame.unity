@@ -181,8 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "CH\u01A0I M\u1EDAI"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
+  m_sharedMaterial: {fileID: 2674715338406880090, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -422,8 +422,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "THO\xC1T"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
+  m_sharedMaterial: {fileID: 2674715338406880090, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -820,7 +820,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 969656268}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: Tutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -927,8 +927,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TI\u1EBEP T\u1EE4C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
+  m_sharedMaterial: {fileID: 2674715338406880090, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1604,8 +1604,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "C\xC0I \u0110\u1EB6T"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
+  m_sharedMaterial: {fileID: 2674715338406880090, guid: f5d61af5752472f42ba0bc04f1b8c2c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

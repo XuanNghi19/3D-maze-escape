@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
   public void Play()
   {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    SceneManager.LoadScene(2);
   } 
 
   public void Quit() 
@@ -15,6 +15,18 @@ public class MainMenu : MonoBehaviour
     Application.Quit();
     Debug.Log("Player has quit");
   }
+
+  public void Tutorial()
+  {
+    SceneManager.LoadScene(1);
+  } 
+
+  public void BackToMenu()
+  {
+    SceneManager.LoadScene(0);
+  } 
+
+
 }
 
 
